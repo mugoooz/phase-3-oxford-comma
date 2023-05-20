@@ -1,4 +1,14 @@
 def oxford_comma(array)
-    array.join("and")
+    case array.size
+    when 0
+        ""
+    when 1
+        array[0]
+    when 2
+        array.join(" and ")
+    else
+        last_element = array.pop
+        "#{array.join(" , ")}, and #{last_element}"
+    end
 
 end
